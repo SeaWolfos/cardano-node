@@ -933,12 +933,12 @@ instance (Show txid, Show tx) => ToObject (Message
   toObject _verb (MsgRequestTxs txids) =
     mkObject
       [ "kind" .= String "MsgRequestTxs"
-      , "txIds" .= String (pack $ show $ txids)
+      , "txIds" .= String (pack $ show txids)
       ]
   toObject _verb (MsgReplyTxs txs) =
     mkObject
       [ "kind" .= String "MsgReplyTxs"
-      , "txs" .= String (pack $ show $ txs)
+      , "txs" .= String (pack $ show txs)
       ]
   toObject _verb (MsgRequestTxIds _ _ _) =
     mkObject
